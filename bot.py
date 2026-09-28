@@ -1,4 +1,21 @@
-               if not c.from_user.username:
+import asyncio
+import logging
+import os
+import re
+import sqlite3
+from decimal import Decimal, ROUND_HALF_UP
+from pathlib import Path
+
+from aiogram import Bot, Dispatcher, F
+from aiogram.exceptions import TelegramAPIError, TelegramForbiddenError, TelegramRetryAfter
+from aiogram.filters import Command, CommandStart
+from aiogram.fsm.context import FSMContext
+from aiogram.fsm.state import State, StatesGroup
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+
+TOKEN = os.environ.get("BOT_TOKEN")
+if not TOKEN:
+    raise RuntimeError("Укажите токен в переменной окружения BOT_TOKEN на хостинге!")               if not c.from_user.username:
             await c.message.answer("Укажите username в настройках Telegram или введите @username получателя.")
             return
         await invoice(c.message, uid, "@" + c.from_user.username, state)
