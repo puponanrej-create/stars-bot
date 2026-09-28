@@ -15,7 +15,7 @@ from aiogram.exceptions import TelegramAPIError, TelegramForbiddenError, Telegra
 
 # Python 3.10+. Токен задаётся на хостинге, не в GitHub.
 TOKEN = os.environ.get('BOT_TOKEN')
-if not TOKEN:8863437103:AAG-tEst8iUbbiRD5UIB01dQC28H5-lVXvA
+if not TOKEN: 8863437103:AAG-tEst8iUbbiRD5UIB01dQC28H5-lVXvA
     raise RuntimeError('Укажите новый токен в переменной окружения BOT_TOKEN')
 ADMIN_ID = 8402707157
 SUPPORT_URL = f'tg://user?id={ADMIN_ID}'
