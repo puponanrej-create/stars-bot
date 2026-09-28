@@ -1,4 +1,4 @@
-        if not c.from_user.username:
+               if not c.from_user.username:
             await c.message.answer("Укажите username в настройках Telegram или введите @username получателя.")
             return
         await invoice(c.message, uid, "@" + c.from_user.username, state)
